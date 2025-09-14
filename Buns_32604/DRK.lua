@@ -434,6 +434,7 @@ end
 
 profile.HandleWeaponskill = function()
     gcmelee.DoWS()
+    gcmelee.GetGorget()
 
     local action = gData.GetAction()
     if (action.Name == 'Guillotine') then
