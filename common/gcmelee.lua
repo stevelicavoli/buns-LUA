@@ -343,7 +343,7 @@ function gcmelee.GetGorget()
     local action = gData.GetAction()
     
     if flameGorgetWS[action.Name] then
-        gFunc.Equip('Neck',flame_gorget)  -- or your single-slot override
+        gFunc.Equip('Neck',flame_gorget) 
     elseif soilGorgetWS[action.Name] then
         gFunc.Equip('Neck',soil_gorget)
     elseif aquaGorgetWS[action.Name] then
@@ -358,7 +358,7 @@ function gcmelee.GetGorget()
         gFunc.equip('Neck',light_gorget)
     elseif shadowGorgetWS[action.name] then
         gFunc.equip('Neck',shadow_gorget)
-    -- …and so on for blocks 3–8
     end
+end
 
 return gcmelee
