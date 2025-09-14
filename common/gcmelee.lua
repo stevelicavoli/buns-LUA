@@ -8,7 +8,124 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
-conquest = gFunc.LoadFile('common\\conquest.lua')
+conquest = gFunc.LoadFile('common\\conquest.lua') 
+
+local flame_gorget = 'Flame Gorget'
+local soil_gorget = 'Soil Gorget'
+local aqua_gorget = 'Aqua Gorget'
+local breeze_gorget = 'Breeze Gorget'
+local snow_gorget = 'Snow Gorget'
+local thunder_gorget = 'Thunder Gorget'
+local light_gorget = 'Light Gorget'
+local shadow_gorget = 'Shadow Gorget'
+
+local flameGorgetWS = {
+    ['Arching Arrow']=true, ['Ascetic\'s Fury']=true, ['Asuran Fists']=true, ['Atonement']=true,
+    ['Blade: Shun']=true, ['Burning Blade']=true, ['Decimation']=true, ['Detonator']=true,
+    ['Drakesbane']=true, ['Dulling Arrow']=true, ['Empyreal Arrow']=true, ['Final Heaven']=true,
+    ['Flaming Arrow']=true, ['Full Swing']=true, ['Garland of Bliss']=true, ['Heavy Shot']=true,
+    ['Hexa Strike']=true, ['Hot Shot']=true, ['Insurgency']=true, ['Knights of Round']=true,
+    ['Last Stand']=true, ['Mandalic Stab']=true, ['Mistral Axe']=true, ['Metatron Torment']=true,
+    ['Realmrazer']=true, ['Red Lotus Blade']=true, ['Scourge']=true, ['Shijin Spiral']=true,
+    ['Sniper Shot']=true, ['Spinning Attack']=true, ['Spinning Axe']=true, ['Stringing Pummel']=true,
+    ['Tachi: Kagero']=true, ['Tachi: Kasha']=true, ['Upheaval']=true, ['Wheeling Thrust']=true
+}
+local soilGorgetWS = {
+    ['Aeolian Edge']=true, ['Asuran Fists']=true, ['Avalanche Axe']=true, ['Blade: Ku']=true,
+    ['Blade: Retsu']=true, ['Blade: Ten']=true, ['Calamity']=true, ['Catastrophe']=true,
+    ['Crescent Moon']=true, ['Dancing Edge']=true, ['Entropy']=true, ['Evisceration']=true,
+    ['Exenterator']=true, ['Expiacion']=true, ['Fast Blade']=true, ['Hard Slash']=true,
+    ['Impulse Drive']=true, ['Iron Tempest']=true, ['King\'s Justice']=true, ['Leaden Salute']=true,
+    ['Mercy Stroke']=true, ['Nightmare Scythe']=true, ['Omniscience']=true, ['Primal Rend']=true,
+    ['Pyrrhic Kleos']=true, ['Rampage']=true, ['Requiescat']=true, ['Resolution']=true,
+    ['Retribution']=true, ['Savage Blade']=true, ['Seraph Blade']=true, ['Shattersoul']=true,
+    ['Shining Blade']=true, ['Sickle Moon']=true, ['Slice']=true, ['Spinning Axe']=true,
+    ['Spinning Scythe']=true, ['Spiral Hell']=true, ['Stardiver']=true, ['Stringing Pummel']=true,
+    ['Sturmwind']=true, ['Swift Blade']=true, ['Tachi: Enpi']=true, ['Tachi: Jinpu']=true,
+    ['Tachi: Rana']=true, ['Trueflight']=true, ['Viper Bite']=true, ['Vorpal Blade']=true,
+    ['Vorpal Scythe']=true, ['Wasp Sting']=true
+}
+local aquaGorgetWS = {
+    ['Atonement']=true, ['Blade: Teki']=true, ['Brainshaker']=true, ['Circle Blade']=true,
+    ['Cross Reaper']=true, ['Dark Harvest']=true, ['Entropy']=true, ['Quietus']=true,
+    ['Death Blossom']=true, ['Decimation']=true, ['Expiacion']=true, ['Full Break']=true,
+    ['Garland of Bliss']=true, ['Gate of Tartarus']=true, ['Geirskogul']=true, ['Ground Strike']=true,
+    ['Last Stand']=true, ['Mordant Rime']=true, ['Namas Arrow']=true, ['Piercing Arrow']=true,
+    ['Pyrrhic Kleos']=true, ['Rudra\'s Storm']=true, ['Primal Rend']=true, ['Raging Rush']=true,
+    ['Retribution']=true, ['Ruinator']=true, ['Shadow of Death']=true, ['Shadowstitch']=true,
+    ['Shockwave']=true, ['Shoulder Tackle']=true, ['Sidewinder']=true, ['Skullbreaker']=true,
+    ['Slug Shot']=true, ['Smash Axe']=true, ['Spinning Scythe']=true, ['Spiral Hell']=true,
+    ['Split Shot']=true, ['Starburst']=true, ['Steel Cyclone']=true, ['Sturmwind']=true,
+    ['Sunburst']=true, ['Tachi: Gekko']=true, ['Tachi: Koki']=true, ['Vidohunir']=true,
+    ['Vorpal Thrust']=true
+}
+local breezeGorgetWS = {
+    ['Aeolian Edge']=true, ['Backhand Blow']=true, ['Black Halo']=true, ['Blade: Jin']=true,
+    ['Blade: Kamu']=true, ['Blade: Metsu']=true, ['Blade: To']=true, ['Camlann\'s Torment']=true,
+    ['Coronach']=true, ['Cyclone']=true, ['Dancing Edge']=true, ['Death Blossom']=true,
+    ['Dragon Kick']=true, ['Earth Crusher']=true, ['Exenterator']=true, ['Freezebite']=true,
+    ['Gale Axe']=true, ['Ground Strike']=true, ['Gust Slash']=true, ['King\'s Justice']=true,
+    ['Mordant Rime']=true, ['Raging Axe']=true, ['Randgrith']=true, ['Red Lotus Blade']=true,
+    ['Resolution']=true, ['Ruinator']=true, ['Savage Blade']=true, ['Shark Bite']=true,
+    ['Shell Crusher']=true, ['Sidewinder']=true, ['Slug Shot']=true, ['Spinning Slash']=true,
+    ['Steel Cyclone']=true, ['Tachi: Jinpu']=true, ['Tachi: Kaiten']=true, ['Tachi: Shoha']=true,
+    ['Tachi: Yukikaze']=true, ['Tornado Kick']=true, ['Trueflight']=true, ['True Strike']=true,
+    ['Victory Smite']=true, ['Vidohunir']=true
+}
+local snowGorgetWS = {
+    ['Blade: To']=true, ['Blast Arrow']=true, ['Blast Shot']=true, ['Cross Reaper']=true,
+    ['Death Blossom']=true, ['Expiacion']=true, ['Freezebite']=true, ['Frostbite']=true,
+    ['Full Break']=true, ['Gate of Tartarus']=true, ['Geirskogul']=true, ['Ground Strike']=true,
+    ['Guillotine']=true, ['Quietus']=true, ['Impulse Drive']=true, ['Mordant Rime']=true,
+    ['Namas Arrow']=true, ['Piercing Arrow']=true, ['Pyrrhic Kleos']=true, ['Rudra\'s Storm']=true,
+    ['Ruinator']=true, ['Raging Rush']=true, ['Shadow of Death']=true, ['Shattersoul']=true,
+    ['Skullbreaker']=true, ['Smash Axe']=true, ['Spiral Hell']=true, ['Steel Cyclone']=true,
+    ['Tachi: Gekko']=true, ['Tachi: Hobaku']=true, ['Tachi: Rana']=true, ['Tachi: Yukikaze']=true,
+    ['Tornado Kick']=true, ['Vidohunir']=true
+}
+local thunderGorgetWS = {
+    ['Aeolian Edge']=true, ['Apex Arrow']=true, ['Armor Break']=true, ['Avalanche Axe']=true,
+    ['Black Halo']=true, ['Blade: Chi']=true, ['Blade: Jin']=true, ['Blade: Kamu']=true,
+    ['Blade: Shun']=true, ['Calamity']=true, ['Camlann\'s Torment']=true, ['Circle Blade']=true,
+    ['Combo']=true, ['Cyclone']=true, ['Death Blossom']=true, ['Dragon Kick']=true,
+    ['Earth Crusher']=true, ['Exenterator']=true, ['Flat Blade']=true, ['Full Swing']=true,
+    ['Ground Strike']=true, ['Heavy Swing']=true, ['Howling Fist']=true, ['Judgment']=true,
+    ['King\'s Justice']=true, ['Leg Sweep']=true, ['Mordant Rime']=true, ['Raging Axe']=true,
+    ['Raging Fists']=true, ['Raiden Thrust']=true, ['Realmrazer']=true, ['Resolution']=true,
+    ['Rock Crusher']=true, ['Savage Blade']=true, ['Seraph Strike']=true, ['Shark Bite']=true,
+    ['Shield Break']=true, ['Shining Strike']=true, ['Shoulder Tackle']=true, ['Sickle Moon']=true,
+    ['Skewer']=true, ['Spinning Attack']=true, ['Spinning Axe']=true, ['Spinning Slash']=true,
+    ['Tachi: Goten']=true, ['Tachi: Koki']=true, ['Tachi: Shoha']=true, ['Thunder Thrust']=true,
+    ['Tornado Kick']=true, ['Trueflight']=true, ['True Strike']=true, ['Victory Smite']=true,
+    ['Vidohunir']=true, ['Vorpal Blade']=true, ['Weapon Break']=true
+}
+local lightGorgetWS = {
+    ['Apex Arrow']=true, ['Arching Arrow']=true, ['Ascetic\'s Fury']=true, ['Atonement']=true,
+    ['Blade: Chi']=true, ['Blade: Ku']=true, ['Blade: Rin']=true, ['Blade: Shun']=true,
+    ['Blast Arrow']=true, ['Blast Shot']=true, ['Camlann\'s Torment']=true, ['Decimation']=true,
+    ['Detonator']=true, ['Double Thrust']=true, ['Drakesbane']=true, ['Dulling Arrow']=true,
+    ['Empyreal Arrow']=true, ['Evisceration']=true, ['Final Heaven']=true, ['Flaming Arrow']=true,
+    ['Garland of Bliss']=true, ['Heavy Shot']=true, ['Hexa Strike']=true, ['Hot Shot']=true,
+    ['Howling Fist']=true, ['Insurgency']=true, ['Knights of Round']=true, ['Leaden Salute']=true,
+    ['Last Stand']=true, ['Mandalic Stab']=true, ['Metatron Torment']=true, ['Mistral Axe']=true,
+    ['Omniscience']=true, ['Piercing Arrow']=true, ['Power Slash']=true, ['Realmrazer']=true,
+    ['Raiden Thrust']=true, ['Scourge']=true, ['Shijin Spiral']=true, ['Sidewinder']=true,
+    ['Skewer']=true, ['Slug Shot']=true, ['Sniper Shot']=true, ['Split Shot']=true,
+    ['Tachi: Enpi']=true, ['Tachi: Goten']=true, ['Tachi: Kasha']=true, ['Thunder Thrust']=true,
+    ['Victory Smite']=true, ['Upheaval']=true, ['Vorpal Scythe']=true, ['Vorpal Thrust']=true,
+    ['Wheeling Thrust']=true
+}
+local shadowGorgetWS = {
+    ['Asuran Fists']=true, ['Black Halo']=true, ['Blade: Ei']=true, ['Blade: Hi']=true,
+    ['Blade: Kamu']=true, ['Blade: Ku']=true, ['Blade: Ten']=true, ['Blade: Metsu']=true,
+    ['Catastrophe']=true, ['Quietus']=true, ['Entropy']=true, ['Evisceration']=true,
+    ['Impulse Drive']=true, ['Insurgency']=true, ['Keen Edge']=true, ['Leaden Salute']=true,
+    ['Mandalic Stab']=true, ['Mercy Stroke']=true, ['Requiescat']=true, ['Rudra\'s Storm']=true,
+    ['Nightmare Scythe']=true, ['Omniscience']=true, ['One Inch Punch']=true, ['Penta Thrust']=true,
+    ['Primal Rend']=true, ['Retribution']=true, ['Shattersoul']=true, ['Starburst']=true,
+    ['Stringing Pummel']=true, ['Sunburst']=true, ['Stardiver']=true, ['Swift Blade']=true,
+    ['Tachi: Kasha']=true, ['Tachi: Rana']=true, ['Tachi: Shoha']=true, ['Upheaval']=true
+}
 
 local gcmelee = {}
 
@@ -221,5 +338,27 @@ end
 function gcmelee.GetAccuracyMode()
     return TpVariantTable[tp_variant]
 end
+
+function gcmelee.GetGorget()
+    local action = gData.GetAction()
+    
+    if flameGorgetWS[action.Name] then
+        gFunc.Equip('Neck',flame_gorget)  -- or your single-slot override
+    elseif soilGorgetWS[action.Name] then
+        gFunc.Equip('Neck',soil_gorget)
+    elseif aquaGorgetWS[action.Name] then
+        gFunc.Equip('Neck',aqua_gorget)
+    elseif breezeGorgetWS[action.Name] then
+        gFunc.equip('Neck',breeze_gorget)
+    elseif snowGorgetWS[action.name] then
+        gFunc.equip('Neck',snow_gorget)
+    elseif thunderGorgetWS[action.name] then
+        gFunc.equip('Neck',thunder_gorget)
+    elseif lightGorgetWS[action.name] then
+        gFunc.equip('Neck',light_gorget)
+    elseif shadowGorgetWS[action.name] then
+        gFunc.equip('Neck',shadow_gorget)
+    -- …and so on for blocks 3–8
+    end
 
 return gcmelee
