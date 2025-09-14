@@ -78,7 +78,6 @@ local sets = {
 
     ['WS'] = {
         Head = 'Hecatomb Cap',
-        Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
         Body = 'Dragon Harness',
@@ -95,7 +94,6 @@ local sets = {
     WS_Evisceration = {},
     ['WS_AeolianEdge'] = {
         Head = 'Hecatomb Cap',
-        Neck = 'Breeze Gorget',
         Ear1 = 'Moldavite Earring',
         Ear2 = 'Pixie Earring',
         Body = 'Dragon Harness',
