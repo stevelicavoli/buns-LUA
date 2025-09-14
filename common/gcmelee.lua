@@ -349,15 +349,15 @@ function gcmelee.GetGorget()
     elseif aquaGorgetWS[action.Name] then
         gFunc.Equip('Neck',aqua_gorget)
     elseif breezeGorgetWS[action.Name] then
-        gFunc.equip('Neck',breeze_gorget)
+        gFunc.Equip('Neck',breeze_gorget)
     elseif snowGorgetWS[action.name] then
-        gFunc.equip('Neck',snow_gorget)
+        gFunc.Equip('Neck',snow_gorget)
     elseif thunderGorgetWS[action.name] then
-        gFunc.equip('Neck',thunder_gorget)
+        gFunc.Equip('Neck',thunder_gorget)
     elseif lightGorgetWS[action.name] then
-        gFunc.equip('Neck',light_gorget)
+        gFunc.Equip('Neck',light_gorget)
     elseif shadowGorgetWS[action.name] then
-        gFunc.equip('Neck',shadow_gorget)
+        gFunc.Equip('Neck',shadow_gorget)
     end
 end
 
