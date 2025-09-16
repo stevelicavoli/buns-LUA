@@ -287,7 +287,7 @@ local sets = {
 
     TP_LowAcc = {
         Ammo = 'Bomb Core',
-        Head = 'Hecatomb Cap',
+        Head = 'Walahra Turban',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
@@ -302,7 +302,7 @@ local sets = {
     },
     TP_HighAcc = {
         Ammo = 'Bomb Core',
-        Head = 'Hecatomb Cap',
+        Head = 'Walahra Turban',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
@@ -319,7 +319,7 @@ local sets = {
 
     WS = {
         Ammo = 'Bomb Core',
-        Head = 'Chs. Burgeonet',
+        Head = 'Hecatomb Cap',
         Neck = 'Snow Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Pixie Earring',
